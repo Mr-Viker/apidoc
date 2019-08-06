@@ -1,0 +1,88 @@
+html {
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 625%;
+}
+
+body {
+  font-size: 18px;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  /*color: inherit;*/
+}
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+.el-collapse-item__header:hover {
+  color: #409EFF;
+}
+.el-collapse-item__header.is-active {
+  color: #409EFF;
+}
+
+#app {
+  position: relative;
+  min-height: 100vh;
+  width: 1350px;
+  margin: 0 auto;
+}
+
+
+.page-hd {
+  padding: .2rem;
+}
+.page-hd-l {
+  height: 1rem;
+  line-height: 1rem;
+  color: #409EFF;
+}
+.page-hd-r .el-textarea__inner {
+  height: 1rem;
+}
+.page-bd {
+  padding: .2rem;
+}
+
+.el-collapse,
+.el-collapse-item__header {
+  border-color: #DCDFE6 !important;
+}
+.el-collapse-item__wrap {
+  border-color: #686f82 !important;
+}
+.el-collapse-item__header {
+  font-size: .18rem;
+  font-weight: bold;
+}
+.el-collapse-item__content {
+  font-size: .14rem;
+  padding: .2rem;
+  margin-bottom: .3rem;
+}
+
+.panel-item {
+  height: .4rem;
+  line-height: .4rem;
+}
+.panel-item-divider {
+  position: relative;
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: .15rem 0;
+  background-color: #e2e5ec;
+}
+
+.el-input__inner {
+  height: .35rem;
+  line-height: .35rem;
+}

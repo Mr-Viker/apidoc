@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>API接口文档</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/element-ui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.json-viewer.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+<div id="app">
+  <!-- <el-row class="page-hd">
+    <el-col class="page-hd-l" :span='6'><i class="el-icon-info"></i> 额外header信息</el-col>
+    <el-col class="page-hd-r" :span='18'>
+      <el-input type="textarea" v-model='headers' :rows="3" placeholder="请输入内容"></el-input>
+    </el-col>
+  </el-row> -->
+
+  <el-row class='page-bd'>
+    <el-collapse v-model="activePanels" :accordion='true' v-if='doc.length > 0'>
+      <el-collapse-item :title="item.name" :name="item.url" v-for='item in doc' :key='item.url'>
+        <form @submit.prevent='submit($event, item)' novalidate>
+          <el-row class="panel-item"><el-col :span='6'>接口描述：</el-col><el-col :span='18'>{{item.desc}}</el-col></el-row>
+          <el-row class="panel-item"><el-col :span='6'>接口地址：</el-col><el-col :span='18'>{{item.url}}</el-col></el-row>
+          <el-row class="panel-item"><el-col :span='6'>请求方式：</el-col><el-col :span='6'>{{item.method}}</el-col><el-col :span='6' :offset='6' align='right'><el-button type="primary" native-type='submit' size='medium' :loading="submitting">发送</el-button></el-col></el-row>
+          <div class='panel-item-divider'></div>
+          <el-row class="panel-item"><el-col :span='6'>请求参数：</el-col></el-row>
+          <el-row class="panel-item"><el-col :span='4'>字段名称</el-col><el-col :span='4'>类型</el-col><el-col :span='4'>必填/选填</el-col><el-col :span='6'>描述</el-col><el-col :span='6'>值</el-col></el-row>
+          <el-row class="panel-item" v-for='param in item.params' :key='param.name'>
+            <el-col :span='4'>{{param.name}}</el-col><el-col :span='4'>{{param.type}}</el-col><el-col :span='4'>{{param.need}}</el-col><el-col :span='6'>{{param.desc}}</el-col><el-col :span='6'><input type="text" :name="param.name"></el-col>
+          </el-row>
+          <div class='panel-item-divider'></div>
+          <el-row class="panel-item">返回结果：</el-row>
+          <el-row class="panel-result"></el-row>
+          <div class='panel-item-divider'></div>
+          <el-row class="panel-item"><el-col :span='6'>返回结果字段说明：</el-col></el-row>
+          <el-row class="panel-item"><el-col :span='4'>字段名称</el-col><el-col :span='4'>类型</el-col><el-col :span='6'>描述</el-col></el-row>
+          <el-row class="panel-item" v-for='result in item.results' :key='result.name'>
+            <el-col :span='4'>{{result.name}}</el-col><el-col :span='4'>{{result.type}}</el-col><el-col :span='6'>{{result.desc}}</el-col><el-col :span='6'></el-col>
+          </el-row>
+        </form>
+      </el-collapse-item>
+    </el-collapse>
+  </el-row>
+</div>
+
+
+
+
+<!-- js -->
+<script src="./js/vue.min.js"></script>
+<script src="./js/element-ui.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="js/jquery.serializejson.min.js"></script>
+<script src="js/md5.min.js"></script>
+<script src="js/jquery.json-viewer.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
